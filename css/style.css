@@ -1,0 +1,209 @@
+:root{ 
+    /* --color-bg: #ddd;
+    --color-bg-secondary: #fafafa;
+    --color-text: #000; */
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    --color-bg: #ddd;
+    --color-bg-secondary: #fafafa;
+    --color-text: #000;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--color-text) ;
+    background-color: var(--color-bg) ;   
+}
+
+body.darkmode{
+    --color-bg: #223038;
+    --color-bg-secondary: #293A43;
+    --color-text: #fff;
+    
+}
+
+
+/* ********* Barra de Navegacion********* */
+
+.navbar{
+    background-color: var(--color-bg-secondary) ;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+}
+.container-nav{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem; 
+    
+}
+
+.icono-modo{
+    height: 1.5rem;
+    width: 1.5rem;
+    vertical-align: middle ;
+}
+
+/* ********* Buscador y Filtro ********* */
+
+.container1{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    
+}
+/* buscador */
+.searchform{
+    background-color: var(--color-bg-secondary) ;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    padding: 0.4rem;
+    border-radius: 0.25rem;
+}
+
+.searchform img{
+    padding-left: 10px;
+    vertical-align:middle;
+    opacity: 0.7;
+
+}
+
+.searchform input{
+    border: none;
+    outline: none;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text);
+    border-radius: 0.25rem;
+    padding: 9px;
+}
+/* Filtro */
+/* .custom-select{
+ver stylesheet "custom-select"
+
+} */
+
+/* ********* boton de dark-mode ********* */
+
+.btn-darkmode{
+    background-color:  var(--color-bg-secondary); 
+    border: none;
+    outline: none;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.3s;
+    color: var( --color-text);
+}
+.btn-darkmode:hover{
+    opacity: 0.5;
+}
+
+/* ********* Tarjetas Paises ********* */
+
+/* columnado */
+.container2{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+/* estilo de tarjetas */
+article img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 0.35rem;
+    border-top-right-radius: 0.35rem;
+    object-fit: cover;
+    
+}
+.card{
+    background-color: var(--color-bg-secondary) ;
+    border-radius: 0.35rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    /* border-top-left-radius: 120px ;
+    border-bottom-right-radius: 120px ; */
+}
+
+.contentcard{
+    padding: 2rem;
+}
+.contentcard h3{
+    margin-bottom: 2rem;
+}
+
+/* boton de mas informacion estilo */
+p a{
+    
+    color: var(--color-text) ;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 4px;
+}
+p a:hover{
+    background-color: var(--color-bg);
+}
+
+
+
+/* ********* Responsive (de desktop a mobile) ********* */
+
+
+@media (max-width: 1000px){
+    .container-nav{
+        font-size: 0.95rem;
+    }
+    .container2{ grid-template-columns: repeat(3, minmax(0, 1fr));
+    }  
+}
+
+@media (max-width: 750px){
+    .container-nav{
+        font-size: 0.85rem;
+    }
+    .container2{ grid-template-columns: repeat(2, minmax(0, 1fr));
+    }  
+}
+
+@media (max-width: 600px){
+    .container-nav{
+        font-size: 0.75rem;
+    }
+    .container1{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .searchform{
+        padding-top: 0.5px;
+        padding-bottom: 0.5px;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .searchform input{
+        width: 85%;
+    }
+    select{
+        margin-top: 1rem;
+    }
+    .container2{ grid-template-columns: repeat(1, minmax(0, 1fr));
+    } }
